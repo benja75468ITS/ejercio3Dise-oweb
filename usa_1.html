@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIFEINVADER - Perfil</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Doto:wght@100..900&family=Fira+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <!-- Header Sticky -->
+    <header class="quedate_tu_poscion">
+        <a href="index.html" class="logo">LIFEINVADER</a>
+
+    </header>
+
+    <!-- Contenedor Principal -->
+    <div class="contenedor_principal">
+        <main>
+            <!-- Tarjeta de Perfil y Biografía -->
+            <section class="contenedor_perfil">
+                <div class="foto_perfil_grande">
+                    <img src="assets/Foto_Alberto.jpeg" alt="Foto de Perfil de Persona Random 1">
+                </div>
+
+                <div class="biografia_perfil">
+                    <h2>Alberto Poot Veloz</h2>
+                    <p class="ubicacion_subtitulo">En algún lugar de un gran país</p>
+
+                    <h3>Acerca de mí</h3>
+                    <p class="texto_biografia">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Barra lateral de Chats (Desplegable en móviles) -->
+        <aside class="Barra_usuarios">
+            <input type="checkbox" id="toggle-chats" class="toggle_chat_checkbox">
+            <label for="toggle-chats" class="header_chats">
+                <h2>CHATS</h2>
+                <span class="flecha_desplegable">▼</span>
+            </label>
+
+            <ul class="lista_chats">
+                <li>
+                    <a href="usa_2.html" class="usuario_Muestra">
+                        <img src="assets/foto_cesar.jpeg" alt="Persona random 1" class="img_usuario_pequeno">
+                        <div class="info_usuario_chat">
+                            <span>Cesar Ramirez</span>
+                            <p>En línea</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="usa_3.html" class="usuario_Muestra">
+                        <img src="assets/foto_herpes.jpeg" alt="Persona random 2" class="img_usuario_pequeno">
+                        <div class="info_usuario_chat">
+                            <span>Erbert Gomez</span>
+                            <p>En línea</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="usa_4.html" class="usuario_Muestra">
+                        <img src="assets/Foto_roy.jpeg" alt="Persona random 3" class="img_usuario_pequeno">
+                        <div class="info_usuario_chat">
+                            <span>Royfra Santini</span>
+                            <p>En línea</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Botón flotante de chat -->
+        <section class="glob_chat">
+            <img src="assets/Foto_Alberto.jpeg" alt="Chat flotante" class="img_usuario_pequeno">
+        </section>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026. Todos los derechos reservados a Alberto Benjamin Poot Veloz</p>
+    </footer>
+</body>
+
+</html>

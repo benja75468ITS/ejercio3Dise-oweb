@@ -1,0 +1,457 @@
+/* ==========================================
+   RESET Y CONFIGURACIÓN GLOBAL
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f4f2f2;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================
+   CONFIGURACIÓN DEL HEADER
+   ========================================== */
+header {
+    display: flex;
+    background-color: #f4f2f2;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.quedate_tu_poscion {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: "Boldonse", system-ui;
+    font-weight: 400;
+    font-size: clamp(20px, 4vw, 30px);
+    text-decoration: none;
+    color: #1e1e1e;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    color: #8e0000;
+}
+
+/* ==========================================
+   ENLACE DE USUARIO
+   ========================================== */
+.usuario_Muestra {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    font-family: "Boldonse", system-ui;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: #000000;  
+    transition: 0.3s ease; 
+}
+
+.usuario_Muestra p {
+    font-family: "Doto", sans-serif;
+    font-size: 0.85em;
+    color: #d1d1d1;
+}
+
+.img_usuario_pequeno {
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: 0.3s ease, box-shadow 0.3s ease;
+}
+
+.usuario_Muestra:hover {
+    color: #8e0000;
+}
+
+.usuario_Muestra:hover .img_usuario_pequeno {
+    box-shadow: 
+        0 0 4px #ff0000,
+        0 0 6px #8e0000,
+        0 0 12px rgba(255, 0, 0, 0.6);
+}
+
+/* ========================================
+    CONFIGURACIÓN DEL CONTENEDOR PRINCIPAL
+   =======================================*/
+.contenedor_principal {
+    max-width: 950px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.contenedor_principal main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    align-items: center;
+    width: 100%;
+}
+
+/* Ícono de chat flotante (FAB) */
+.contenedor_principal .glob_chat {
+    position: fixed;
+    bottom: 2em;
+    right: 1.5em;
+    z-index: 90;
+    cursor: pointer;
+}
+
+.glob_chat .img_usuario_pequeno {
+    border: 3px solid #000000;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ====================================
+    BARRA LATERAL / MENÚ DESPLEGABLE DE CHATS
+   ==================================== */
+.Barra_usuarios {
+    width: 260px;
+    min-width: 260px;
+    max-height: 500px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    background-color: #8e0000;
+    padding: 12px;
+    border-radius: 5px;
+    position: sticky;
+    top: 75px;
+}
+
+.toggle_chat_checkbox {
+    display: none !important;
+}
+
+.header_chats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f4f2f2;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Evita que los elementos internos del label bloqueen el evento de clic */
+.header_chats h2,
+.header_chats .flecha_desplegable {
+    pointer-events: none;
+}
+
+.Barra_usuarios h2 {
+    background-color: transparent; 
+    margin: 0;
+    color: #f4f2f2;
+    font-family: "Doto", sans-serif;
+}
+
+.flecha_desplegable {
+    display: none;
+    color: #f4f2f2;
+    font-size: 0.9em;
+    transition: transform 0.3s ease;
+}
+
+.Barra_usuarios ul.lista_chats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.Barra_usuarios li {
+    border-bottom: 1px solid rgba(244, 242, 242, 0.2);
+    padding-bottom: 10px;
+}
+
+.Barra_usuarios li:last-child {
+    border: none;
+}
+
+.Barra_usuarios .usuario_Muestra {
+    color: #f4f2f2;
+}
+
+.Barra_usuarios .usuario_Muestra:hover {
+    color: #000000;
+}
+
+.info_usuario_chat {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ================================
+    PUBLICACIONES
+   ================================ */
+.Contenedor_publicacion {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    background-color: #1e1e1e;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+}
+
+.contenedor_img_publicacion {
+    width: 100%;
+    max-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+.img_publicacion {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Texto Principal */
+.contenido_text_Publicacion {
+    padding: 15px;
+    color: #f4f2f2;
+    font-family: "Boldonse", system-ui;
+}
+
+.contenido_text_Publicacion h3 {
+    margin-bottom: 8px;
+}
+
+.texto_pulicacion {
+    font-family: "Doto", sans-serif;
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+/* Comentarios */
+.comentarios ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    gap: 8px;
+}
+
+.comentarios ul li {
+    min-height: 3.5em;
+    height: auto;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: #353535;
+    padding: 8px 12px;
+    border-radius: 3px;
+}
+
+.text_cometario {
+    margin: 0;
+    font-family: "Doto", sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    color: #cccccc;
+    word-break: break-word;
+}
+
+/* ==========================================
+   SECCIÓN DE PERFIL / BIOGRAFÍA
+   ========================================== */
+.contenedor_perfil {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+    background-color: #1e1e1e;
+    color: #f4f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 580px;
+    box-sizing: border-box;
+}
+
+.foto_perfil_grande {
+    width: 180px;
+    min-width: 150px;
+    height: 220px;
+    background-color: #000000;
+    border: 2px solid #f4f2f2;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.foto_perfil_grande img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.biografia_perfil {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.biografia_perfil h2 {
+    font-family: "Boldonse", system-ui;
+    font-size: 1.5em;
+    color: #f4f2f2;
+    margin-bottom: 2px;
+}
+
+.ubicacion_subtitulo {
+    font-family: "Doto", sans-serif;
+    font-size: 0.85em;
+    color: #b0b0b0;
+    margin-bottom: 20px;
+}
+
+.biografia_perfil h3 {
+    font-family: "Boldonse", system-ui;
+    font-size: 1.1em;
+    color: #f4f2f2;
+    margin-bottom: 8px;
+}
+
+.texto_biografia {
+    font-family: "Doto", sans-serif;
+    font-size: 0.85em;
+    line-height: 1.4;
+    color: #cccccc;
+}
+
+/* ================================
+    FOOTER
+   ================================ */
+footer {
+    margin-top: auto;
+    background-color: #1e1e1e;
+    padding: 15px;
+    text-align: center;
+    color: #f4f2f2;
+    font-family: "Doto", sans-serif;
+    font-size: 0.85em;
+}
+
+/* ==========================================
+   MEDIA QUERIES (RESPONSIVE DESIGN)
+   ========================================== */
+
+@media (max-width: 850px) {
+    .Contenedor_publicacion {
+        max-width: 100%;
+    }
+}
+
+/* Teléfonos móviles (menos de 650px) */
+@media (max-width: 650px) {
+    .contenedor_principal {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    header {
+        padding: 10px 12px;
+    }
+
+    .usuario_Muestra span {
+        display: inline-block;
+    }
+
+    .contenido_text_Publicacion {
+        padding: 10px;
+    }
+
+    .contenedor_img_publicacion {
+        max-height: 240px;
+    }
+
+    /* CHATS COMO MENÚ DESPLEGABLE EN MÓVIL */
+    .Barra_usuarios {
+        order: -1;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        max-height: none;
+        position: relative;
+        top: 0;
+        margin-bottom: 10px;
+        overflow: visible;
+    }
+
+    .header_chats {
+        cursor: pointer;
+        user-select: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    .flecha_desplegable {
+        display: inline-block;
+    }
+
+    /* Ocultamos la lista por defecto en móviles con mayor especificidad */
+    .Barra_usuarios ul.lista_chats {
+        display: none;
+        margin-top: 12px;
+        padding-top: 10px;
+        border-top: 1px solid rgba(244, 242, 242, 0.3);
+    }
+
+    /* Al estar marcado el checkbox, mostramos la lista */
+    .Barra_usuarios .toggle_chat_checkbox:checked ~ ul.lista_chats {
+        display: flex;
+    }
+
+    /* Rotación de la flecha al abrir */
+    .Barra_usuarios .toggle_chat_checkbox:checked ~ .header_chats .flecha_desplegable {
+        transform: rotate(180deg);
+    }
+
+    .contenedor_perfil {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .foto_perfil_grande {
+        width: 160px;
+        height: 200px;
+    }
+
+    footer {
+        font-size: 0.75em;
+    }
+}
