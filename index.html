@@ -9,7 +9,9 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Doto:wght@100..900&family=Fira+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Boldonse&family=Doto:wght@100..900&family=Fira+Sans:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
 
     <!-- CSS Principal -->
     <link rel="stylesheet" href="Style.css">
@@ -19,35 +21,82 @@
     <header class="quedate_tu_poscion">
         <a href="index.html" class="logo">LIFEINVADER</a>
 
-        <a href="usa_1.html" class="usuario_Muestra">
-            <img src="assets/Foto_Alberto.jpeg" alt="Foto de perfil de Alberto Poot" class="img_usuario_pequeno">
-            <span>Alberto Poot</span>
-        </a>
+        <!-- Buscador Central -->
+        <div class="caja_busqueda">
+            <input type="text" placeholder="Buscar en Lifeinvader...">
+        </div>
+
+        <!-- Notificaciones y Usuario -->
+        <div class="header_derecha">
+            <div class="icono_notificacion" title="Notificaciones">
+                <span class="badge_notificacion">3</span>
+            </div>
+            <a href="usa_1.html" class="usuario_Muestra">
+                <img src="assets/Foto_Alberto.jpeg" alt="Foto de perfil de Alberto Poot" class="img_usuario_pequeno">
+                <span>Alberto Poot</span>
+            </a>
+        </div>
     </header>
 
     <div class="contenedor_principal">
+        <!-- CAJA PARA CREAR PUBLICACIÓN -->
+        <section class="crear_publicacion">
+            <div class="header_crear">
+                <img src="assets/Foto_Alberto.jpeg" alt="Tu foto" class="img_usuario_pequeno">
+                <textarea placeholder="Espía a tus amigos... ¿Qué estás pensando?"></textarea>
+            </div>
+            <div class="acciones_crear">
+                <button type="button" class="btn_adjuntar">Imagen</button>
+                <button type="button" class="btn_publicar">PUBLICAR</button>
+            </div>
+        </section>
+
         <main>
             <article class="Contenedor_publicacion">
                 <div class="contenedor_img_publicacion">
                     <img src="assets/publi1_main.jpeg" alt="Publicación 1" class="img_publicacion">
                 </div>
+
+                <div class="barra_reacciones">
+                    <button type="button" class="btn_reaccion">✦ <span>124</span></button>
+                    <button type="button" class="btn_reaccion">➴ <span>12</span></button>
+                    <button type="button" class="btn_reaccion">➦ <span>5</span></button>
+                    <span class="tiempo_publicacion">Hace 15 min</span>
+                </div>
+
                 <div class="contenido_text_Publicacion">
                     <h3>Póster Brutalista</h3>
-                    <p class="texto_pulicacion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo labore tempore, accusantium, veniam
+                    <p class="texto_pulicacion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo labore
+                        tempore, accusantium, veniam
                         iusto nesciunt nulla reprehenderit dolorum ad at animi adipisci ullam dolor non delectus
                         pariatur! Officia, sapiente atque!</p>
 
-                    <section class="comentarios">
-                        <ul>
-                            <li>
-                                <img src="assets/Foto_Alberto.jpeg" alt="Usuario" class="img_usuario_pequeno">
-                                <p class="text_cometario">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, provident quisquam paria.</p>
-                            </li>
-                            <li>
-                                <img src="assets/foto_cesar.jpeg" alt="Usuario" class="img_usuario_pequeno">
-                                <p class="text_cometario">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, provident quisquam.</p>
-                            </li>
-                        </ul>
+                    <div class="hashtags">
+                        <span>#brutalism</span>
+                        <span>#design</span>
+                        <span>#lifeinvader</span>
+                    </div>
+
+                    <section class="caja_comentarios_seccion">
+                        <div class="lista_comentarios_existentes">
+                            <ul>
+                                <li>
+                                    <img src="assets/Foto_Alberto.jpeg" alt="Usuario" class="img_usuario_pequeno">
+                                    <p class="text_cometario">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Facere, provident quisquam paria.</p>
+                                </li>
+                                <li>
+                                    <img src="assets/foto_cesar.jpeg" alt="Usuario" class="img_usuario_pequeno">
+                                    <p class="text_cometario">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Facere, provident quisquam.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="nuevo_comentario">
+                            <img src="assets/Foto_Alberto.jpeg" alt="Tu foto" class="img_usuario_pequeno">
+                            <input type="text" placeholder="Escribe un comentario..." class="input_comentario">
+                            <button type="button" class="btn_enviar_comentario">➔</button>
+                        </div>
                     </section>
                 </div>
             </article>
@@ -56,19 +105,39 @@
                 <div class="contenedor_img_publicacion">
                     <img src="assets/publi2_main.jpeg" alt="Publicación 2" class="img_publicacion">
                 </div>
+                <div class="barra_reacciones">
+                    <button type="button" class="btn_reaccion">✦ <span>34</span></button>
+                    <button type="button" class="btn_reaccion">➴ <span>1</span></button>
+                    <button type="button" class="btn_reaccion">➦ <span>5</span></button>
+                    <span class="tiempo_publicacion">Hace 15 min</span>
+                </div>
                 <div class="contenido_text_Publicacion">
                     <h3>Póster Brutalista</h3>
-                    <p class="texto_pulicacion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo labore tempore, accusantium, veniam
+                    <p class="texto_pulicacion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo labore
+                        tempore, accusantium, veniam
                         iusto nesciunt nulla reprehenderit dolorum ad at animi adipisci ullam dolor non delectus
                         pariatur! Officia, sapiente atque!</p>
+                    <div class="hashtags">
+                        <span>#brutalism</span>
+                        <span>#design</span>
+                        <span>#lifeinvader</span>
+                    </div>
 
-                    <section class="comentarios">
-                        <ul>
-                            <li>
-                                <img src="assets/Foto_ramdom.jpeg" alt="Usuario" class="img_usuario_pequeno">
-                                <p class="text_cometario">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, provident quisquam paria.</p>
-                            </li>
-                        </ul>
+                    <section class="caja_comentarios_seccion">
+                        <div class="lista_comentarios_existentes">
+                            <ul>
+                                <li>
+                                    <img src="assets/Foto_ramdom.jpeg" alt="Usuario" class="img_usuario_pequeno">
+                                    <p class="text_cometario">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Facere, provident quisquam paria.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="nuevo_comentario">
+                            <img src="assets/Foto_Alberto.jpeg" alt="Tu foto" class="img_usuario_pequeno">
+                            <input type="text" placeholder="Escribe un comentario..." class="input_comentario">
+                            <button type="button" class="btn_enviar_comentario">➔</button>
+                        </div>
                     </section>
                 </div>
             </article>
@@ -77,23 +146,44 @@
                 <div class="contenedor_img_publicacion">
                     <img src="assets/publi3_man..jpeg" alt="Publicación 3" class="img_publicacion">
                 </div>
+                <div class="barra_reacciones">
+                    <button type="button" class="btn_reaccion">✦ <span>500</span></button>
+                    <button type="button" class="btn_reaccion">➴ <span>100</span></button>
+                    <button type="button" class="btn_reaccion">➦ <span>34</span></button>
+                    <span class="tiempo_publicacion">Hace 15 min</span>
+                </div>
                 <div class="contenido_text_Publicacion">
                     <h3>Póster Brutalista</h3>
-                    <p class="texto_pulicacion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo labore tempore, accusantium, veniam
+                    <p class="texto_pulicacion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo labore
+                        tempore, accusantium, veniam
                         iusto nesciunt nulla reprehenderit dolorum ad at animi adipisci ullam dolor non delectus
                         pariatur! Officia, sapiente atque!</p>
+                    <div class="hashtags">
+                        <span>#brutalism</span>
+                        <span>#design</span>
+                        <span>#lifeinvader</span>
+                    </div>
 
-                    <section class="comentarios">
-                        <ul>
-                            <li>
-                                <img src="assets/Foto_ramdom.jpeg" alt="Usuario" class="img_usuario_pequeno">
-                                <p class="text_cometario">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, provident quisquam paria.</p>
-                            </li>
-                            <li>
-                                <img src="assets/foto_cesar.jpeg" alt="Usuario" class="img_usuario_pequeno">
-                                <p class="text_cometario">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, provident quisquam.</p>
-                            </li>
-                        </ul>
+                    <section class="caja_comentarios_seccion">
+                        <div class="lista_comentarios_existentes">
+                            <ul>
+                                <li>
+                                    <img src="assets/Foto_ramdom.jpeg" alt="Usuario" class="img_usuario_pequeno">
+                                    <p class="text_cometario">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Facere, provident quisquam paria.</p>
+                                </li>
+                                <li>
+                                    <img src="assets/foto_cesar.jpeg" alt="Usuario" class="img_usuario_pequeno">
+                                    <p class="text_cometario">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Facere, provident quisquam.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="nuevo_comentario">
+                            <img src="assets/Foto_Alberto.jpeg" alt="Tu foto" class="img_usuario_pequeno">
+                            <input type="text" placeholder="Escribe un comentario..." class="input_comentario">
+                            <button type="button" class="btn_enviar_comentario">➔</button>
+                        </div>
                     </section>
                 </div>
             </article>
@@ -103,23 +193,44 @@
                 <div class="contenedor_img_publicacion">
                     <img src="assets/publi4_main.jpeg" alt="Publicación 4" class="img_publicacion">
                 </div>
+                <div class="barra_reacciones">
+                    <button type="button" class="btn_reaccion">✦ <span>54</span></button>
+                    <button type="button" class="btn_reaccion">➴ <span>12</span></button>
+                    <button type="button" class="btn_reaccion">➦ <span>5</span></button>
+                    <span class="tiempo_publicacion">Hace 15 min</span>
+                </div>
                 <div class="contenido_text_Publicacion">
                     <h3>Póster Brutalista</h3>
-                    <p class="texto_pulicacion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo labore tempore, accusantium, veniam
+                    <p class="texto_pulicacion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo labore
+                        tempore, accusantium, veniam
                         iusto nesciunt nulla reprehenderit dolorum ad at animi adipisci ullam dolor non delectus
                         pariatur! Officia, sapiente atque!</p>
+                    <div class="hashtags">
+                        <span>#brutalism</span>
+                        <span>#design</span>
+                        <span>#lifeinvader</span>
+                    </div>
 
-                    <section class="comentarios">
-                        <ul>
-                            <li>
-                                <img src="assets/foto_herpes.jpeg" alt="Usuario" class="img_usuario_pequeno">
-                                <p class="text_cometario">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, provident quisquam paria.</p>
-                            </li>
-                            <li>
-                                <img src="assets/Foto_roy.jpeg" alt="Usuario" class="img_usuario_pequeno">
-                                <p class="text_cometario">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, provident quisquam.</p>
-                            </li>
-                        </ul>
+                    <section class="caja_comentarios_seccion">
+                        <div class="lista_comentarios_existentes">
+                            <ul>
+                                <li>
+                                    <img src="assets/foto_herpes.jpeg" alt="Usuario" class="img_usuario_pequeno">
+                                    <p class="text_cometario">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Facere, provident quisquam paria.</p>
+                                </li>
+                                <li>
+                                    <img src="assets/Foto_roy.jpeg" alt="Usuario" class="img_usuario_pequeno">
+                                    <p class="text_cometario">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Facere, provident quisquam.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="nuevo_comentario">
+                            <img src="assets/Foto_Alberto.jpeg" alt="Tu foto" class="img_usuario_pequeno">
+                            <input type="text" placeholder="Escribe un comentario..." class="input_comentario">
+                            <button type="button" class="btn_enviar_comentario">➔</button>
+                        </div>
                     </section>
                 </div>
             </article>
@@ -136,7 +247,8 @@
             <ul class="lista_chats">
                 <li>
                     <a href="usa_1.html" class="usuario_Muestra">
-                        <img src="assets/Foto_Alberto.jpeg" alt="Foto de perfil de Alberto Poot" class="img_usuario_pequeno">
+                        <img src="assets/Foto_Alberto.jpeg" alt="Foto de perfil de Alberto Poot"
+                            class="img_usuario_pequeno">
                         <div class="info_usuario_chat">
                             <span>Alberto Poot</span>
                             <p>En línea</p>
@@ -145,7 +257,8 @@
                 </li>
                 <li>
                     <a href="usa_2.html" class="usuario_Muestra">
-                        <img src="assets/foto_cesar.jpeg" alt="Foto de perfil de Alberto Poot" class="img_usuario_pequeno">
+                        <img src="assets/foto_cesar.jpeg" alt="Foto de perfil de Alberto Poot"
+                            class="img_usuario_pequeno">
                         <div class="info_usuario_chat">
                             <span>Cersar Ramirez</span>
                             <p>En línea</p>
@@ -154,7 +267,8 @@
                 </li>
                 <li>
                     <a href="usa_3.html" class="usuario_Muestra">
-                        <img src="assets/foto_herpes.jpeg" alt="Foto de perfil de Alberto Poot" class="img_usuario_pequeno">
+                        <img src="assets/foto_herpes.jpeg" alt="Foto de perfil de Alberto Poot"
+                            class="img_usuario_pequeno">
                         <div class="info_usuario_chat">
                             <span>Erbert Gomez</span>
                             <p>En línea</p>
@@ -163,7 +277,8 @@
                 </li>
                 <li>
                     <a href="usa_4.html" class="usuario_Muestra">
-                        <img src="assets/Foto_roy.jpeg" alt="Foto de perfil de Alberto Poot" class="img_usuario_pequeno">
+                        <img src="assets/Foto_roy.jpeg" alt="Foto de perfil de Alberto Poot"
+                            class="img_usuario_pequeno">
                         <div class="info_usuario_chat">
                             <span>Royfran Santini</span>
                             <p>En línea</p>
@@ -172,7 +287,8 @@
                 </li>
                 <li>
                     <a href="usa_1.html" class="usuario_Muestra">
-                        <img src="assets/Foto_ramdom.jpeg" alt="Foto de perfil de Alberto Poot" class="img_usuario_pequeno">
+                        <img src="assets/Foto_ramdom.jpeg" alt="Foto de perfil de Alberto Poot"
+                            class="img_usuario_pequeno">
                         <div class="info_usuario_chat">
                             <span>gordito.py</span>
                             <p>En línea</p>

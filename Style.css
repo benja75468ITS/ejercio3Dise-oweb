@@ -16,7 +16,7 @@ body {
 }
 
 /* ==========================================
-   CONFIGURACIÓN DEL HEADER
+   HEADER Y NAVEGACIÓN
    ========================================== */
 header {
     display: flex;
@@ -25,6 +25,7 @@ header {
     justify-content: space-between;
     padding: 10px 20px;
     border-bottom: 1px solid #e0e0e0;
+    gap: 15px;
 }
 
 .quedate_tu_poscion {
@@ -46,8 +47,56 @@ header {
     color: #8e0000;
 }
 
+/* Buscador Central */
+.caja_busqueda {
+    flex: 1;
+    max-width: 320px;
+}
+
+.caja_busqueda input {
+    width: 100%;
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    font-family: "Doto", sans-serif;
+    font-size: 0.85em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.caja_busqueda input:focus {
+    border-color: #8e0000;
+}
+
+/* Notificaciones y Perfil en Header */
+.header_derecha {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icono_notificacion {
+    position: relative;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.badge_notificacion {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: #8e0000;
+    color: #ffffff;
+    font-size: 0.6em;
+    font-weight: bold;
+    font-family: "Doto", sans-serif;
+    padding: 2px 5px;
+    border-radius: 50%;
+}
+
 /* ==========================================
-   ENLACE DE USUARIO
+   AVATARES Y ELEMENTOS DE USUARIO
    ========================================== */
 .usuario_Muestra {
     display: flex;
@@ -87,11 +136,27 @@ header {
         0 0 12px rgba(255, 0, 0, 0.6);
 }
 
-/* ========================================
-    CONFIGURACIÓN DEL CONTENEDOR PRINCIPAL
-   =======================================*/
+.avatar_contenedor {
+    position: relative;
+    display: inline-block;
+}
+
+.status_online {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 10px;
+    height: 10px;
+    background-color: #00ff66;
+    border-radius: 50%;
+    border: 2px solid #8e0000;
+}
+
+/* ==========================================
+   ESTRUCTURA DE 3 COLUMNAS (LAYOUT)
+   ========================================== */
 .contenedor_principal {
-    max-width: 950px;
+    max-width: 1150px;
     width: 100%;
     margin: 0 auto;
     padding: 15px;
@@ -103,14 +168,15 @@ header {
 
 .contenedor_principal main {
     flex: 1;
+    max-width: 520px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1.5em;
     align-items: center;
-    width: 100%;
 }
 
-/* Ícono de chat flotante (FAB) */
+/* Chat flotante (FAB) */
 .contenedor_principal .glob_chat {
     position: fixed;
     bottom: 2em;
@@ -126,9 +192,271 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* ====================================
-    BARRA LATERAL / MENÚ DESPLEGABLE DE CHATS
-   ==================================== */
+/* ==========================================
+   COLUMNA IZQUIERDA: CREAR PUBLICACIÓN
+   ========================================== */
+.crear_publicacion {
+    width: 280px;
+    min-width: 260px;
+    background-color: #1e1e1e;
+    border-radius: 4px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: sticky;
+    top: 75px;
+}
+
+.header_crear {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.header_crear textarea {
+    flex: 1;
+    height: 60px;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 8px;
+    color: #f4f2f2;
+    font-family: "Doto", sans-serif;
+    font-size: 0.85em;
+    resize: none;
+    outline: none;
+}
+
+.header_crear textarea:focus {
+    border-color: #8e0000;
+}
+
+.acciones_crear {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn_adjuntar {
+    background: none;
+    border: none;
+    color: #cccccc;
+    font-family: "Doto", sans-serif;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+.btn_adjuntar:hover {
+    color: #ffffff;
+}
+
+.btn_publicar {
+    background-color: #8e0000;
+    color: #f4f2f2;
+    border: none;
+    padding: 6px 14px;
+    font-family: "Boldonse", system-ui;
+    font-size: 0.75em;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn_publicar:hover {
+    background-color: #b30000;
+}
+
+/* ==========================================
+   COLUMNA CENTRAL: PUBLICACIONES Y FEED
+   ========================================== */
+.Contenedor_publicacion {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    background-color: #1e1e1e;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+}
+
+.contenedor_img_publicacion {
+    width: 100%;
+    max-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+.img_publicacion {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.barra_reacciones {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px 5px 15px;
+    background-color: #1e1e1e;
+}
+
+.btn_reaccion {
+    background: none;
+    border: none;
+    color: #f4f2f2;
+    font-family: "Doto", sans-serif;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.btn_reaccion:hover {
+    transform: scale(1.1);
+}
+
+.tiempo_publicacion {
+    margin-left: auto;
+    font-family: "Doto", sans-serif;
+    font-size: 0.75em;
+    color: #888888;
+}
+
+.contenido_text_Publicacion {
+    padding: 10px 15px 15px 15px;
+    color: #f4f2f2;
+    font-family: "Boldonse", system-ui;
+}
+
+.contenido_text_Publicacion h3 {
+    margin-bottom: 6px;
+}
+
+.texto_pulicacion {
+    font-family: "Doto", sans-serif;
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.hashtags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.hashtags span {
+    font-family: "Doto", sans-serif;
+    font-size: 0.8em;
+    color: #8e0000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hashtags span:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   SECCIÓN DE COMENTARIOS
+   ========================================== */
+.caja_comentarios_seccion {
+    margin-top: 12px;
+    border-top: 1px solid #2a2a2a;
+    padding-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lista_comentarios_existentes ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    gap: 8px;
+}
+
+.lista_comentarios_existentes li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    background-color: #262626;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.contenido_comentario_texto {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+}
+
+.nombre_usuario_comentario {
+    font-family: "Boldonse", system-ui;
+    font-size: 0.7em;
+    color: #f4f2f2;
+}
+
+.text_cometario {
+    margin: 0;
+    font-family: "Doto", sans-serif;
+    font-size: 0.85em;
+    color: #cccccc;
+    word-break: break-word;
+}
+
+.nuevo_comentario {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #262626;
+    padding: 6px 10px;
+    border-radius: 20px;
+    border: 1px solid #444;
+}
+
+.nuevo_comentario:focus-within {
+    border-color: #8e0000;
+}
+
+.input_comentario {
+    flex: 1;
+    background: none;
+    border: none;
+    color: #f4f2f2;
+    font-family: "Doto", sans-serif;
+    font-size: 0.85em;
+    outline: none;
+}
+
+.btn_enviar_comentario {
+    background-color: #8e0000;
+    color: #f4f2f2;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    transition: background-color 0.2s ease;
+}
+
+.btn_enviar_comentario:hover {
+    background-color: #b30000;
+}
+
+/* ==========================================
+   COLUMNA DERECHA: BARRA DE CHATS
+   ========================================== */
 .Barra_usuarios {
     width: 260px;
     min-width: 260px;
@@ -157,7 +485,6 @@ header {
     user-select: none;
 }
 
-/* Evita que los elementos internos del label bloqueen el evento de clic */
 .header_chats h2,
 .header_chats .flecha_desplegable {
     pointer-events: none;
@@ -208,85 +535,8 @@ header {
     flex-direction: column;
 }
 
-/* ================================
-    PUBLICACIONES
-   ================================ */
-.Contenedor_publicacion {
-    width: 100%;
-    max-width: 520px;
-    height: auto;
-    background-color: #1e1e1e;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    border-radius: 4px;
-}
-
-.contenedor_img_publicacion {
-    width: 100%;
-    max-height: 320px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    background-color: #000000;
-}
-
-.img_publicacion {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Texto Principal */
-.contenido_text_Publicacion {
-    padding: 15px;
-    color: #f4f2f2;
-    font-family: "Boldonse", system-ui;
-}
-
-.contenido_text_Publicacion h3 {
-    margin-bottom: 8px;
-}
-
-.texto_pulicacion {
-    font-family: "Doto", sans-serif;
-    font-size: 0.9em;
-    line-height: 1.4;
-    margin-bottom: 15px;
-}
-
-/* Comentarios */
-.comentarios ul {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    padding: 0;
-    gap: 8px;
-}
-
-.comentarios ul li {
-    min-height: 3.5em;
-    height: auto;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    background-color: #353535;
-    padding: 8px 12px;
-    border-radius: 3px;
-}
-
-.text_cometario {
-    margin: 0;
-    font-family: "Doto", sans-serif;
-    font-weight: 700;
-    font-size: 11px;
-    color: #cccccc;
-    word-break: break-word;
-}
-
 /* ==========================================
-   SECCIÓN DE PERFIL / BIOGRAFÍA
+   SECCIÓN DE PERFIL DE USUARIO
    ========================================== */
 .contenedor_perfil {
     flex: 1;
@@ -351,9 +601,9 @@ header {
     color: #cccccc;
 }
 
-/* ================================
-    FOOTER
-   ================================ */
+/* ==========================================
+   FOOTER
+   ========================================== */
 footer {
     margin-top: auto;
     background-color: #1e1e1e;
@@ -365,39 +615,30 @@ footer {
 }
 
 /* ==========================================
-   MEDIA QUERIES (RESPONSIVE DESIGN)
+   RESPONSIVE DESIGN / MEDIA QUERIES
    ========================================== */
 
+/* Tablets / Pantallas Medianas (menos de 850px) */
 @media (max-width: 850px) {
+    .contenedor_principal {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .crear_publicacion {
+        width: 100%;
+        max-width: 520px;
+        position: static;
+    }
+
+    .Barra_usuarios {
+        width: 100%;
+        max-width: 520px;
+    }
+
     .Contenedor_publicacion {
         max-width: 100%;
     }
-}
-
-/* Teléfonos móviles (menos de 650px) */
-@media (max-width: 650px) {
-    .contenedor_principal {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    header {
-        padding: 10px 12px;
-    }
-
-    .usuario_Muestra span {
-        display: inline-block;
-    }
-
-    .contenido_text_Publicacion {
-        padding: 10px;
-    }
-
-    .contenedor_img_publicacion {
-        max-height: 240px;
-    }
-
-    /* CHATS COMO MENÚ DESPLEGABLE EN MÓVIL */
     .Barra_usuarios {
         order: -1;
         width: 100%;
@@ -422,7 +663,6 @@ footer {
         display: inline-block;
     }
 
-    /* Ocultamos la lista por defecto en móviles con mayor especificidad */
     .Barra_usuarios ul.lista_chats {
         display: none;
         margin-top: 12px;
@@ -430,12 +670,88 @@ footer {
         border-top: 1px solid rgba(244, 242, 242, 0.3);
     }
 
-    /* Al estar marcado el checkbox, mostramos la lista */
     .Barra_usuarios .toggle_chat_checkbox:checked ~ ul.lista_chats {
         display: flex;
     }
 
-    /* Rotación de la flecha al abrir */
+    .Barra_usuarios .toggle_chat_checkbox:checked ~ .header_chats .flecha_desplegable {
+        transform: rotate(180deg);
+    }
+
+    .contenedor_perfil {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .foto_perfil_grande {
+        width: 160px;
+        height: 200px;
+    }
+
+    footer {
+        font-size: 0.75em;
+    }
+}
+
+/* Teléfonos Móviles (menos de 650px) */
+@media (max-width: 650px) {
+    .contenedor_principal {
+        padding: 10px;
+    }
+
+    header {
+        padding: 10px 12px;
+    }
+
+    .caja_busqueda {
+        display: none;
+    }
+
+    .contenido_text_Publicacion {
+        padding: 10px;
+    }
+
+    .contenedor_img_publicacion {
+        max-height: 240px;
+    }
+
+    /* Chats colapsables en móvil */
+    .Barra_usuarios {
+        order: -1;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        max-height: none;
+        position: relative;
+        top: 0;
+        margin-bottom: 10px;
+        overflow: visible;
+    }
+
+    .header_chats {
+        cursor: pointer;
+        user-select: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    .flecha_desplegable {
+        display: inline-block;
+    }
+
+    .Barra_usuarios ul.lista_chats {
+        display: none;
+        margin-top: 12px;
+        padding-top: 10px;
+        border-top: 1px solid rgba(244, 242, 242, 0.3);
+    }
+
+    .Barra_usuarios .toggle_chat_checkbox:checked ~ ul.lista_chats {
+        display: flex;
+    }
+
     .Barra_usuarios .toggle_chat_checkbox:checked ~ .header_chats .flecha_desplegable {
         transform: rotate(180deg);
     }
